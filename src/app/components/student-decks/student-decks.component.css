@@ -1,0 +1,22 @@
+.row{
+    padding: 0 20px;
+}
+.underlined{
+    margin: 20px;
+    border-bottom: 1px solid rgb(183, 183, 183);
+}
+.icon{
+    width: auto;
+    height: 20px;
+}
+.add-icon{
+    background-color: #f69732;
+    border-radius: 50%;
+    margin-bottom: 4px;
+    margin-right: 4px;
+    float: right;
+}
+
+.category-name{
+    display: inline;
+}

@@ -1,0 +1,26 @@
+<br>
+<h3 class="text-center"> Login </h3>
+<br>
+
+<div class="container col-md-4 col-offset-4">
+
+    <div *ngIf="errorFlag" class="alert alert-danger" role="alert">
+        {{ errorMessage }}
+    </div>
+
+<form (ngSubmit)="onSubmit()">
+
+    <div class="col-12">
+        <label for="usernameInput" class="form-label">username or email:</label>
+        <input id="usernameInput" name="username" type="text" class="form-control" [(ngModel)]="student.username" required>
+    </div>
+
+    <div class="col-12">
+        <label for="password" class="form-label">password</label>
+        <input class="form-control" name="password" id="password" type="password" [(ngModel)]="student.password" required>
+    </div>
+
+    <br>
+    <input type="submit" name="submitBtn" value="Login" class="btn btn-primary">
+</form>
+</div>

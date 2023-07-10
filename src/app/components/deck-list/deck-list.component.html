@@ -1,0 +1,7 @@
+<div class="row">
+    <ng-container *ngFor="let deck of deckList">
+        <div class="col-md-3">
+            <deck [deck]="deck" [catalog]="true"></deck>
+        </div>
+    </ng-container>
+</div>

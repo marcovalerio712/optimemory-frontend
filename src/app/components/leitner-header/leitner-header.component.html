@@ -1,0 +1,35 @@
+
+
+<nav class="navbar bg-dark navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" routerLink="/home" >
+            <img src="/assets/images/box.png" alt="logo" class="d-inline-block align-center">
+            <span class="brand-title">{{title}}</span>
+        </a>
+
+        <div class="navbar-text">
+            <a class="nav-link" routerLink="/decks">Catalogue</a>
+        </div>
+
+        <div class="navbar-text">
+            <a class="nav-link" routerLink="/mydecks">My Decks</a>
+        </div>
+
+        <ng-container *ngIf="student?.username; else notLogged">
+            <div class="navbar-text">
+                <div class="input-group">
+                    <div class="form-control login-name-container">@{{student?.username}}</div>
+                <button (click)="logout()" class="btn btn-secondary"><img src="/assets/icons/logout.png" class="icon"></button>
+            </div>
+            </div>
+        </ng-container>
+        <ng-template #notLogged>
+            <div class="navbar-text" *ngIf="!student?.username">
+                <a routerLink="/login" class="btn btn-secondary">Login</a>
+            </div>
+        </ng-template> 
+    </div>
+
+    
+
+  </nav>

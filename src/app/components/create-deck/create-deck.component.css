@@ -1,0 +1,35 @@
+.container{
+    margin-top: 50px;
+}
+.form-group{
+    margin-top: 10px;
+}
+
+textarea{
+    resize: none;
+}
+.btn-submit{
+    float: right;
+    margin-top: 20px;
+}
+
+#flashcardList{
+    max-height: 500px;
+    overflow-y: scroll;
+    margin-top: 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+}
+.card-add-btn{
+    background-color: #f69732;
+    border-radius: 10px;
+}
+.card-add-btn img{
+    height: 70px;
+    width: 70px;
+    margin: auto;
+}
+.list-element{
+    height: 130px;
+    margin: 10px 0;
+}

@@ -1,0 +1,23 @@
+<div class="underlined">
+    <h4 class="category-name float-left col-sm-2">My decks</h4>
+    <a routerLink="/decks/new">
+        <img src="/assets/icons/add_2.png" class="icon add-icon">
+    </a>
+</div>
+<div class="row">
+    <ng-container *ngFor="let deck of student?.createdDecks">
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <deck [deck]="deck"></deck>
+        </div>
+    </ng-container>
+</div>
+<div class="underlined">
+    <h4 class="category-name"> Followed Decks </h4>
+</div>
+<div class="row">
+    <ng-container *ngFor="let deck of student?.followedDecks">
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <deck [deck]="deck"></deck>
+        </div>
+    </ng-container>
+</div>

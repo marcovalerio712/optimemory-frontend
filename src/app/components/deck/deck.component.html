@@ -1,0 +1,43 @@
+<div class="card">
+    
+    <div class="card-header"> 
+        {{ deck!.name }} 
+        <ng-container *ngIf="catalog; else inMyDecks">
+
+        </ng-container>
+        <ng-template #inMyDecks>
+            <ng-container *ngIf="isMyDeck(); else notMine">
+                <img (click)="delete()" class="icon header-icon" src="/assets/icons/delete.png"/>
+                <img (click)="modify()" class="icon header-icon" src="/assets/icons/modify.png"/>
+            </ng-container>
+            <ng-template #notMine>
+                <img (click)="unfollow()" class="icon header-icon" src="/assets/icons/delete.png"/>
+            </ng-template>
+        </ng-template>
+        
+    </div>
+    <div class="card-body">
+        <div class="card-text" style="height: 7rem">
+            {{ deck!.description }} 
+        </div>
+        
+    
+    <div class="d-flex justify-content-between">
+        <ng-container *ngIf="catalog; else mine">
+            <div (click)="follow()" class="btn btn-primary">
+                <img class="icon" src="/assets/icons/add.png">
+            </div>
+        </ng-container>
+        <ng-template #mine>
+            <div (click)="startSession()" class="btn btn-primary">
+                <img class="icon" src="/assets/icons/play.png">
+            </div>
+        </ng-template>
+        
+        <span *ngIf="deck?.author" class="card-text" style="font-style: italic;"> @{{deck!.author!.username}} </span> 
+    </div>
+</div>
+
+</div> 
+
+  

@@ -1,0 +1,28 @@
+.card{
+    background-color: #e8effb;
+    margin-bottom: 20px;
+}
+.card-header{
+    background-color: #f69732;
+    color: white;
+}
+.card-text{
+    overflow: scroll;
+    margin-bottom: 1rem;
+}
+.icon{
+    width: auto;
+    height: 20px;
+}
+.header-icon{
+    margin: 0 5px;
+    float: right;
+    border-radius: 3px;
+}
+.header-icon:hover{
+    background-color: #fdb365;
+}
+.icon{
+    height: 20px;
+    width: auto;
+}
