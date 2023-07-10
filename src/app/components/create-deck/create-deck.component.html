@@ -2,7 +2,7 @@
 <div class="container col-md-6 col-offset-3">
 
     <ng-container *ngIf="isOnFlashcard">
-        <create-flashcard></create-flashcard>
+        <create-flashcard [title]="'Flashcard 1'" (newFlashcardEvent)="onFlashcardCreated($event)"></create-flashcard>
     </ng-container> 
     <h4 class="text-center">Create a new Deck</h4>
 
@@ -19,19 +19,13 @@
         
         <div id="flashcardList" class="row">
 
-            <div class="col-md-4">
-                <div class="card card-body  list-element">Card</div>
-            </div>
-            <div class="col-md-4">
-                <div class="card card-body  list-element">Card</div>
-            </div>
-            <div class="col-md-4">
-                <div class="card card-body list-element">Card</div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card card-body list-element">Card</div>
-            </div>
+            <ng-container *ngFor="let flashcard of deck.flashcards">
+                <div class="col-md-4">
+                    <div class="card card-body list-element">{{flashcard.question}}</div>
+                </div>
+            </ng-container>
+            
+        
 
             <div class="col-md-4">
                 <div (click)="addFlashcard()" class="card-add-btn btn card card-body list-element">
@@ -43,7 +37,7 @@
         
 
         <div class="form-group">
-            <input type="submit" class="btn btn-primary btn-submit" value="Crea Deck">
+            <input type="submit" class="btn btn-primary btn-submit" value="Create Deck">
         </div>
     </form>    
 </div>

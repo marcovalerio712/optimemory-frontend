@@ -10,8 +10,22 @@
 .pop-up{
     position: absolute;
     top: calc(50% - 250px);
-    right: calc(50% - 250px);
-    width: 500px;
+    right: calc(50% - 300px);
+    width: 600px;
     height: 500px;    
     z-index: 3;
+}
+textarea{
+    resize: none;
+}
+.form-group{
+    margin-bottom: 10px;
+}
+.btn-submit{
+    float: right;
+    margin-top: 20px;
+}
+.select{
+    float: left;
+    width: 300px;
 }

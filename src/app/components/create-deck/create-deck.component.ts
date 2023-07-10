@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Deck } from 'src/app/model/Deck/deck';
+import { Flashcard } from 'src/app/model/Flashcard/flashcard';
 import { DeckService } from 'src/app/service/DeckService/deck.service';
 
 @Component({
@@ -17,11 +18,16 @@ export class CreateDeckComponent {
     
     this.deck.flashcards = []
     
-
   }
 
   addFlashcard(){
     this.isOnFlashcard = true;
+  }
+
+  onFlashcardCreated(flashcard : Flashcard) {
+    this.deck.flashcards = this.deck.flashcards?.concat(flashcard)
+    console.log(this.deck.flashcards)
+    this.isOnFlashcard = false;
   }
 
   onSubmit(){

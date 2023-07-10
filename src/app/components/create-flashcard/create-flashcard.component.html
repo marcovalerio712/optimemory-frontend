@@ -1,9 +1,31 @@
 <div class="page">
     <div class="card pop-up">
-        <form>
-            
-    
-        </form>
+        <div class="card-header">
+            {{ title }}
+        </div>
+        <div class="card-body">
+            <form (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="question">Question</label>
+                    <textarea class="form-control" id="question" rows="5" name="question" required [(ngModel)]="flashcard.question"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="answer">Answer</label>
+                    <textarea class="form-control" id="answer" rows="5" name="answer" [(ngModel)]="flashcard.answer"></textarea>
+                </div>
+                <div class="form-group select">
+                    <label for="subject">Subject</label>
+                    <select class="form-select" name="subject" aria-label="Subject" [(ngModel)]="flashcard.subject">
+                        <option selected>Choose a subject for your card</option>
+                        <ng-container *ngFor="let subject of subjects">
+                            <option [ngValue]="subject">{{subject.name}}</option>
+                        </ng-container>
+                    </select>
+                </div>
+
+                <input class="btn btn-primary btn-submit" type="submit" (click)="onSubmit()" value="Create"/>
+            </form>
+        </div>   
     </div>
 </div>
 
