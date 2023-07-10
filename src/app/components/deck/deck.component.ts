@@ -16,7 +16,7 @@ export class DeckComponent implements OnInit{
   @Input() catalog: boolean = false;
 
   constructor(private sService: StudentService, private dService: DeckService){
-
+    var a = 10;
   }
 
   ngOnInit(): void {
