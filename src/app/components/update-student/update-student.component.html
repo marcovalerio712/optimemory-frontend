@@ -1,0 +1,31 @@
+<div class="page">
+    <div class="card pop-up">
+        <div class="card-header">
+            <span class="card-title">Update Student</span>
+            <div class="cancel-button" (click)="close()">
+                <img src="/assets/icons/cancel.png">
+            </div>
+        </div>
+        <div class="card-body">
+            <form (ngSubmit)="onSubmit()">
+                
+                <input type="hidden" name="id" [(ngModel)]="student!.id" value="student!.id">
+                
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" required [(ngModel)]="student!.username" value="{{student?.username}}">    
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required [(ngModel)]="student!.email" value="student?.email">    
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="text" class="form-control" id="password" name="password" required [(ngModel)]="student!.password" value="student?.password">    
+                </div>
+
+                <input class="btn btn-primary btn-submit" type="submit" value="Update"/>
+            </form>
+        </div>   
+    </div>
+</div>

@@ -25,15 +25,11 @@ textarea{
     float: right;
     margin-top: 20px;
 }
-.select{
+.card-title{
     float: left;
-    width: 300px;
 }
 .card-header{
     background-color: #f69732;
-}
-.card-title{
-    float: left;
 }
 .cancel-button{
     width: 30px;

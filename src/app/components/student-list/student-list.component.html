@@ -1,0 +1,35 @@
+
+<h4 class="text-center">Student List</h4>
+<ng-container *ngIf="onStudentUpdate">
+    <update-student [student]="currentStudent" (onClose)="closePopup()" (onUpdate)="saveUpdatedUser($event)"></update-student>
+</ng-container>
+
+<div class="container">
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">Password</th>
+            <th scope="col">Operations</th>
+          </tr>
+        </thead>
+        <tbody>
+        <ng-container *ngFor="let student of students">
+            <tr>
+                <th scope="row">{{student.id}}</th>
+                <td>{{student.username}}</td>
+                <td>{{student.email}}</td>
+                <td>{{student.password}}</td>
+                <td>
+                    <button (click)="delete(student)" class="btn btn-danger"><img src="/assets/icons/delete.png"></button>
+                    <button (click)="update(student)" class="btn btn-warning"><img src="/assets/icons/modify.png"></button>
+                </td>
+              </tr>
+        </ng-container>
+        </tbody>
+      </table>
+
+</div>

@@ -32,8 +32,13 @@ export class StudentRegistrationComponent {
           this.successMessage = 'User registered successfully, please confirm your email.'
           this.successFlag = true
         },
-        error: () => {
-          this.errorMessage = 'Username or Email already in use, please login.'
+        error: (err) => {
+          switch(err.status){
+            case 406:
+              this.errorMessage = 'Username or Email already in use, please login.'
+              break;
+          }
+         
           this.errorFlag = true;
         }
 

@@ -2,7 +2,7 @@
 <div class="container col-md-6 col-offset-3">
 
     <ng-container *ngIf="isOnFlashcard">
-        <create-flashcard [title]="'Flashcard 1'" (newFlashcardEvent)="onFlashcardCreated($event)"></create-flashcard>
+        <create-flashcard [flashcard]="currentFlashcard" (newFlashcardEvent)="onFlashcardCreated($event)" (onClose)="closeFlashcard()"></create-flashcard>
     </ng-container> 
     <h4 class="text-center">Create a new Deck</h4>
 
@@ -21,7 +21,14 @@
 
             <ng-container *ngFor="let flashcard of deck.flashcards">
                 <div class="col-md-4">
-                    <div class="card card-body list-element">{{flashcard.question}}</div>
+                    <div class="card list-element">
+                        <div class="card-header">
+                            <img src="/assets/icons/cancel.png" (click)="delete(flashcard)">
+                            <img src="/assets/icons/modify.png" (click)="update(flashcard)">
+                        </div>
+                        <div class="card-body">{{flashcard.question}}</div>
+                    </div>
+                    
                 </div>
             </ng-container>
             

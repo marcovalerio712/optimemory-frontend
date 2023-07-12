@@ -30,6 +30,19 @@ textarea{
     margin: auto;
 }
 .list-element{
-    height: 130px;
+    height: 12rem;
     margin: 10px 0;
+}
+.list-element .card-header{
+    background-color: #f69732;
+    color: white
+}
+.list-element .card-header img{
+    width: 20px;
+    height: auto;
+    float: right;
+    margin-left: 5px;
+}
+.list-element .card-body{
+    overflow-y: scroll;
 }

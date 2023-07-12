@@ -10,10 +10,11 @@ import { SubjectService } from 'src/app/service/SubjectService/subject.service';
 })
 export class CreateFlashcardComponent implements OnInit{
 
-  @Input() title? : string;
-  @Output() newFlashcardEvent = new EventEmitter<Flashcard>();
 
-  flashcard: Flashcard = new Flashcard();
+  @Input() flashcard? : Flashcard;
+  @Output() newFlashcardEvent = new EventEmitter<Flashcard>();
+  @Output() onClose = new EventEmitter<Object>();
+
   subjects: Subject[] = []
 
   constructor(private subjService : SubjectService) {
@@ -21,6 +22,10 @@ export class CreateFlashcardComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    
+    if(!this.flashcard)
+      this.flashcard = new Flashcard()
+    
     
     this.subjService.getSubjects().subscribe({
       next: data => this.subjects = data,
@@ -32,6 +37,11 @@ export class CreateFlashcardComponent implements OnInit{
   onSubmit() {
     this.newFlashcardEvent.emit(this.flashcard)
     this.flashcard = new Flashcard()
+  }
+
+  close() {
+    this.onClose.emit();
+    this.flashcard = new Flashcard();
   }
 
 }

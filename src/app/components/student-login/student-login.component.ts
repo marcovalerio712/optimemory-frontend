@@ -21,7 +21,7 @@ export class StudentLoginComponent {
   onSubmit() {
 
     this.student.email = this.student.username
-    
+
     this.service.loginStudent(this.student).subscribe(
     {
       next: st => {
@@ -31,7 +31,14 @@ export class StudentLoginComponent {
           () => window.location.reload()
         );
       },
-      error: () => {
+      error: (err) => {
+        switch(err.status){
+          case 406:
+            this.errorMessage = 'Incorrect username or password, please try again'
+            break;
+          case 401:
+            this.errorMessage = 'Please confirm your registration by checking your email adress'
+        }
         this.errorFlag = true;
       }
     }

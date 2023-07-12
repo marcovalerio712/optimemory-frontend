@@ -1,0 +1,12 @@
+h4{
+    margin: 50px 0;
+}
+button img{
+    width: auto;
+    height: 100%;
+    vertical-align: baseline;
+}
+button{
+    margin-right: 5px;
+    height: 30px;
+}
